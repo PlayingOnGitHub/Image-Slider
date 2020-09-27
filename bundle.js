@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("var imageArray = [\"controller-1\", \"controller-2\", \"controller-3\"];\nvar currentItem = 0;\n\nfunction changeArray() {\n  var arrow = this;\n  var direction = arrow.id;\n\n  if (direction === \"left-arrow\") {\n    moveToTheRight();\n  } else if (direction === \"right-arrow\") {\n    moveToTheLeft();\n  }\n}\n\nfunction moveImages() {\n  var arrow = this;\n}\n\nfunction shiftItems() {\n  changeArray.call(this);\n  moveImages.call(this);\n  console.log(currentItem);\n}\n\nfunction moveToTheLeft() {\n  /* if we are at the last array item */\n  if (currentItem === imageArray.length - 1) {\n    currentItem = 0;\n    return;\n  }\n\n  currentItem += 1;\n}\n\nfunction moveToTheRight() {\n  /* if we are at the start of the array, shift\n     to the end of the array */\n  if (currentItem === 0) {\n    currentItem = imageArray.length - 1;\n    return;\n  }\n\n  currentItem -= 1;\n}\n/* test functions */\n\n\nfunction moveLeft() {\n  var leftArrow = document.getElementById(\"left-arrow\");\n  shiftItems.call(leftArrow);\n}\n\nfunction moveRight() {\n  var rightArrow = document.getElementById(\"right-arrow\");\n  shiftItems.call(rightArrow);\n}\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
