@@ -1,5 +1,6 @@
 const imageArray = ["controller-1", "controller-2", "controller-3"];
 let currentItem = 0;
+let previousItem = 2;
 
 function changeArray() {
   const arrow = this;
@@ -12,10 +13,13 @@ function changeArray() {
 }
 
 function moveImages() {
-  const arrow = this;
+  const imageFromArray = imageArray[currentItem];
+  const useThisImage = `${imageFromArray}.jpg`;
+  console.log(useThisImage);
 }
 
 function shiftItems() {
+  previousItem = currentItem;
   changeArray.call(this);
   moveImages.call(this);
   console.log(currentItem);
@@ -50,3 +54,12 @@ function moveRight() {
   const rightArrow = document.getElementById("right-arrow");
   shiftItems.call(rightArrow);
 }
+
+function createEventListeners() {
+  const leftArrow = document.getElementById("left-arrow");
+  const rightArrow = document.getElementById("right-arrow");
+  leftArrow.addEventListener("click", shiftItems.bind(leftArrow), true);
+  rightArrow.addEventListener("click", shiftItems.bind(rightArrow), true);
+}
+
+createEventListeners();
