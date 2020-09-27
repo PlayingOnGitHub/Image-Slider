@@ -1,0 +1,116 @@
+body {
+    background-color: #97CAEF;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+}
+
+#content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.pictureFrame {
+    width: 600px;
+    height: 210px;
+    position: relative;
+}
+
+.left-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 210px;
+    background-color: #97CAEF;
+}
+
+.showcase {
+    position: absolute;
+    top: 0;
+    left: 200px;
+    width: 200px;
+    height: 210px;
+}
+
+.right-slide {
+    position: absolute;
+    top: 0;
+    left: 400px;
+    width: 200px;
+    height: 210px;
+    background-color: #97CAEF;
+}
+
+#picture1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#picture2 {
+    position: absolute;
+    top: 0;
+    left: 200px;
+}
+
+#picture3 {
+    position: absolute;
+    top: 0;
+    left: 400px;
+}
+
+.picture {
+    width: 200px;
+    height: 210px;
+}
+
+.arrow {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+}
+
+.left-arrow {
+    margin-left: -45px;
+    margin-top: 93px;
+    z-index: 2;
+}
+
+.right-arrow {
+    margin-left: 205px;
+    margin-top: 94px;
+    transform: rotate(180deg);
+    z-index: 2;
+}
+
+.arrow-line-1 {
+    width: 3px;
+    height: 20px;
+    background-color: #FC4445;
+    transform: translate(-50%, -50%) rotate(45deg);
+    margin-top: 10px;
+    margin-left: 12px;
+}
+
+.arrow-line-2 {
+    width: 3px;
+    height: 20px;
+    background-color: #FC4445;
+    transform: translate(-50%, -50%) rotate(125deg);
+    margin-top: -8px;
+    margin-left: 13px;
+}
+
+.arrow:hover .arrow-line-1, .arrow:hover .arrow-line-2 {
+    background-color: white;
+    cursor: pointer;
+}
+
+.arrow:hover {
+    cursor: pointer;
+}

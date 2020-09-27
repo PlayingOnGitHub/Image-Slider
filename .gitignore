@@ -2,3 +2,4 @@ node_modules/
 .vscode/
 .npmignore
 .eslintrc.json
+dist/color-scheme-inspiration.jpg
