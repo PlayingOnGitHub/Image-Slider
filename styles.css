@@ -15,43 +15,21 @@ body {
 }
 
 .pictureFrame {
-    width: 600px;
-    height: 210px;
-    position: relative;
-}
-
-.left-slide {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 200px;
     height: 210px;
-    background-color: #97CAEF;
+    position: relative;
+    overflow: hidden;
+    /* could potentially be resized to fit images using javascript.. and 
+    maybe resized dynamically while moving with css? */
 }
 
-.showcase {
+/* .showcase {
     position: absolute;
     top: 0;
     left: 200px;
     width: 200px;
     height: 210px;
-}
-
-.right-slide {
-    position: absolute;
-    top: 0;
-    left: 400px;
-    width: 200px;
-    height: 210px;
-    background-color: #97CAEF;
-}
-
-.picture {
-    width: 200px;
-    height: 210px;
-    position: absolute;
-    top: 0;
-}
+} */
 
 .arrow {
     position: absolute;
@@ -60,13 +38,13 @@ body {
 }
 
 .left-arrow {
-    margin-left: -45px;
+    margin-left: 0px;
     margin-top: 93px;
     z-index: 2;
 }
 
 .right-arrow {
-    margin-left: 205px;
+    margin-left: 150px;
     margin-top: 94px;
     transform: rotate(180deg);
     z-index: 2;
@@ -99,29 +77,32 @@ body {
     cursor: pointer;
 }
 
-.move-to-left-slide {
-    left:0px !important;
+.move-to-right {
+    left:-200px !important;
     transition: left 1s linear !important;
 }
 
-.move-to-center-slide {
+.move-to-center {
+    left: 0px !important;
+    transition: left 1s linear !important;
+}
+
+.move-to-left {
     left: 200px !important;
     transition: left 1s linear !important;
 }
 
-.move-to-right-slide {
-    left: 400px !important;
-    transition: left 1s linear !important;
+.wrapping-div {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: auto;
+    left: 0px;
+    top: 0px;
 }
 
-.position-left {
-    left:0;
-}
-
-.position-right {
-    left: 400px;
-}
-
-.position-center {
-    left: 200px;
+.wrapping-div img {
+    width: 200px;
+    height: 210px;
 }
