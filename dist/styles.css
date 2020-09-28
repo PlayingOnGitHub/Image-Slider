@@ -46,27 +46,11 @@ body {
     background-color: #97CAEF;
 }
 
-#picture1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-#picture2 {
-    position: absolute;
-    top: 0;
-    left: 200px;
-}
-
-#picture3 {
-    position: absolute;
-    top: 0;
-    left: 400px;
-}
-
 .picture {
     width: 200px;
     height: 210px;
+    position: absolute;
+    top: 0;
 }
 
 .arrow {
@@ -113,4 +97,31 @@ body {
 
 .arrow:hover {
     cursor: pointer;
+}
+
+.move-to-left-slide {
+    left:0px !important;
+    transition: left 1s linear !important;
+}
+
+.move-to-center-slide {
+    left: 200px !important;
+    transition: left 1s linear !important;
+}
+
+.move-to-right-slide {
+    left: 400px !important;
+    transition: left 1s linear !important;
+}
+
+.position-left {
+    left:0;
+}
+
+.position-right {
+    left: 400px;
+}
+
+.position-center {
+    left: 200px;
 }
