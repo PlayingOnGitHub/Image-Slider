@@ -62,11 +62,15 @@ function restackImages() {
 }
 
 function shiftItems() {
-  previousItem = currentItem;
-  changeArray.call(this);
-  restackImages.call(this);
-  moveImages.call(this);
-  console.log(currentItem);
+  // previousItem = currentItem;
+  // changeArray.call(this);
+  // restackImages.call(this);
+  // moveImages.call(this);
+  // console.log(currentItem);
+  const direction = this.id;
+  if (direction == "left-arrow") {
+  } else if (direction == "right-arrow") {
+  }
 }
 
 function moveToTheLeft() {
