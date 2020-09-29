@@ -23,13 +23,9 @@ body {
     maybe resized dynamically while moving with css? */
 }
 
-/* .showcase {
-    position: absolute;
-    top: 0;
-    left: 200px;
-    width: 200px;
-    height: 210px;
-} */
+.pictureFrameWrapper {
+
+}
 
 .arrow {
     position: absolute;
@@ -38,14 +34,14 @@ body {
 }
 
 .left-arrow {
-    margin-left: 0px;
+    margin-left: -50px;
     margin-top: 93px;
     z-index: 2;
 }
 
 .right-arrow {
-    margin-left: 150px;
-    margin-top: 94px;
+    margin-left: 225px;
+    margin-top: -117px;
     transform: rotate(180deg);
     z-index: 2;
 }
@@ -90,4 +86,28 @@ body {
 .wrapping-div img {
     width: 200px;
     height: 210px;
+}
+
+.circle {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    border: 1px solid #2B7A78;
+    margin-right: 4px;
+    margin-top: 4px;
+    cursor: pointer;
+}
+
+.fill-circle {
+    background-color: #2B7A78;
+}
+
+.unfill-circle {
+    background-color: transparent;
+}
+
+.picture-navigation-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }

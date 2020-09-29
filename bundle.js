@@ -86,14 +86,39 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/create.js":
+/*!***********************!*\
+  !*** ./src/create.js ***!
+  \***********************/
+/*! exports provided: element */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"element\", function() { return element; });\nfunction element(type, idOrClass, name, href, idOrClass2, name2) {\n  var newElement = document.createElement(type);\n  if (idOrClass === undefined && idOrClass !== \"\") return newElement;\n\n  if (idOrClass === \"id\" || idOrClass === \"class\") {\n    idOrClass === \"id\" ? newElement.id = name : newElement.className = name;\n  }\n\n  if (href !== false) {\n    if (type === \"img\") {\n      newElement.src = href;\n    }\n\n    if (type === \"a\") {\n      newElement.href = href;\n    }\n  }\n\n  if (idOrClass2 === undefined && idOrClass2 !== \"\") return newElement;\n\n  if (idOrClass2 === \"id\" || idOrClass2 === \"class\") {\n    idOrClass2 === \"id\" ? newElement.id = name2 : newElement.className = name2;\n  }\n\n  return newElement;\n}\n\n\n\n//# sourceURL=webpack:///./src/create.js?");
+
+/***/ }),
+
+/***/ "./src/domStuff.js":
+/*!*************************!*\
+  !*** ./src/domStuff.js ***!
+  \*************************/
+/*! exports provided: createSlider */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"createSlider\", function() { return createSlider; });\n/* harmony import */ var _create__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./create */ \"./src/create.js\");\n\n\nfunction createSlider(id, sliderName, imageArray) {\n  var content = document.getElementById(id);\n  var pictureFrameWrapper = content.appendChild(_create__WEBPACK_IMPORTED_MODULE_0__[\"element\"](\"div\", \"class\", \"pictureFrameWrapper\", \"\", \"id\", sliderName));\n  var leftArrow = pictureFrameWrapper.appendChild(_create__WEBPACK_IMPORTED_MODULE_0__[\"element\"](\"div\", \"class\", \"arrow left-arrow\", \"\", \"id\", \"\".concat(sliderName, \"-left-arrow\")));\n  leftArrow.appendChild(_create__WEBPACK_IMPORTED_MODULE_0__[\"element\"](\"div\", \"class\", \"arrow-line-1\"));\n  leftArrow.appendChild(_create__WEBPACK_IMPORTED_MODULE_0__[\"element\"](\"div\", \"class\", \"arrow-line-2\"));\n  var pictureFrame = pictureFrameWrapper.appendChild(_create__WEBPACK_IMPORTED_MODULE_0__[\"element\"](\"div\", \"class\", \"pictureFrame\"));\n  var wrappingDiv = pictureFrame.appendChild(_create__WEBPACK_IMPORTED_MODULE_0__[\"element\"](\"div\", \"class\", \"wrapping-div\", \"\", \"id\", \"\".concat(sliderName, \"-wrapping-div\")));\n  var rightArrow = pictureFrameWrapper.appendChild(_create__WEBPACK_IMPORTED_MODULE_0__[\"element\"](\"div\", \"class\", \"arrow right-arrow\", \"\", \"id\", \"\".concat(sliderName, \"-right-arrow\")));\n  rightArrow.appendChild(_create__WEBPACK_IMPORTED_MODULE_0__[\"element\"](\"div\", \"class\", \"arrow-line-1\"));\n  rightArrow.appendChild(_create__WEBPACK_IMPORTED_MODULE_0__[\"element\"](\"div\", \"class\", \"arrow-line-2\"));\n  var pictureNavigationWrapper = pictureFrameWrapper.appendChild(_create__WEBPACK_IMPORTED_MODULE_0__[\"element\"](\"div\", \"class\", \"picture-navigation-wrapper\", \"\", \"id\", \"\".concat(sliderName, \"-picture-navigation-wrapper\")));\n  var proto = {\n    wrappingDiv: wrappingDiv,\n    pictureNavigationWrapper: pictureNavigationWrapper,\n    imageArray: imageArray\n  };\n  addContent(proto);\n}\n\nfunction createImages(wrappingDiv, imageArray) {\n  console.log(wrappingDiv);\n  console.log(imageArray);\n}\n\nfunction createPictureNavigationCircles(pictureNavigationWrapper) {\n  console.log(pictureNavigationWrapper);\n}\n\nfunction addContent(someData) {\n  var wrappingDiv = someData.wrappingDiv;\n  var pictureNavigationWrapper = someData.pictureNavigationWrapper;\n  var imageArray = someData.imageArray;\n  createImages(wrappingDiv, imageArray);\n  createPictureNavigationCircles(pictureNavigationWrapper);\n}\n\n\n\n//# sourceURL=webpack:///./src/domStuff.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("var pictureArray = [\"controller-1\", \"controller-2\", \"controller-3\"]; // const movementArray = pictureArray.map( (picture, currentIndex) => {\n//   if ( currentIndex == 0) {\n//     return \"0px\";\n//   }\n//   let amountOfPixels = -200 * currentIndex;\n//   let pixels = amountOfPixels.toString() + \"px\";\n//   return pixels;\n// });\n\nvar wrappingDiv = document.getElementById(\"wrapping-div\");\nvar currentItem = 0; // function moveLeft() {\n//     const direction = this;\n//     direction.style.transition = \"left 1.5s ease\";\n//     direction.style.left = pictureArray[currentItem];\n//     currentItem += 1;\n// }\n// temp1.addEventListener(\"transitionend\", cycleThroughImages, true);\n// temp1.style.transition = \"left 1.2s ease\";\n// temp1.style.left = \"1px\";\n\nfunction createEventListeners() {\n  var leftArrow = document.getElementById(\"left-arrow\");\n  var rightArrow = document.getElementById(\"right-arrow\");\n  leftArrow.addEventListener(\"click\", moveLeft, true);\n  rightArrow.addEventListener(\"click\", moveRight, true);\n}\n\ncreateEventListeners();\n\n//# sourceURL=webpack:///./src/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _domStuff__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./domStuff */ \"./src/domStuff.js\");\n\nvar imageArray = [\"controller-1\", \"controller-2\", \"controller-3\"];\n_domStuff__WEBPACK_IMPORTED_MODULE_0__[\"createSlider\"](\"content\", \"cool-slider\", imageArray); // const pictureArray = [\"controller-1\", \"controller-2\", \"controller-3\"];\n// const wrappingDiv = document.getElementById(\"wrapping-div\");\n// let myPosition = 0;\n// const movementArray = pictureArray.map((picture, currentIndex) => {\n//   if (currentIndex == 0) {\n//     return \"0px\";\n//   }\n//   let amountOfPixels = -200 * currentIndex;\n//   let pixels = amountOfPixels.toString() + \"px\";\n//   return pixels;\n// });\n// function correctPositioning() {\n//   if (myPosition < 0) {\n//     myPosition = pictureArray.length - 1;\n//   } else if (myPosition > pictureArray.length - 1) {\n//     myPosition = 0;\n//   }\n// }\n// function runAnimation() {\n//   correctPositioning();\n//   animateToNextPicture();\n// }\n// function animateToNextPicture() {\n//   let newPosition = movementArray[myPosition];\n//   wrappingDiv.style.transition = \"left 1s ease\";\n//   wrappingDiv.style.left = newPosition;\n// }\n// function moveLeft() {\n//   myPosition -= 1;\n//   runAnimation();\n// }\n// function moveRight() {\n//   myPosition += 1;\n//   runAnimation();\n// }\n// function cycleContinuously() {\n//   setInterval(moveRight, 5000);\n// }\n// function createEventListeners() {\n//   const leftArrow = document.getElementById(\"left-arrow\");\n//   const rightArrow = document.getElementById(\"right-arrow\");\n//   leftArrow.addEventListener(\"click\", moveLeft, true);\n//   rightArrow.addEventListener(\"click\", moveRight, true);\n// }\n// createEventListeners();\n// createNavigationCircles();\n// cycleContinuously();\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
