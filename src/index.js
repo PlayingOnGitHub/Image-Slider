@@ -1,6 +1,13 @@
-const pictureArray = ["controller-1", "controller-2", "controller-3"];
-// const movementArray = pictureArray.map( (picture, currentIndex) => {
-//   if ( currentIndex == 0) {
+import * as domStuff from "./domStuff";
+const imageArray = ["controller-1", "controller-2", "controller-3"];
+domStuff.createSlider("content", "cool-slider", imageArray);
+
+// const pictureArray = ["controller-1", "controller-2", "controller-3"];
+// const wrappingDiv = document.getElementById("wrapping-div");
+// let myPosition = 0;
+
+// const movementArray = pictureArray.map((picture, currentIndex) => {
+//   if (currentIndex == 0) {
 //     return "0px";
 //   }
 //   let amountOfPixels = -200 * currentIndex;
@@ -8,24 +15,45 @@ const pictureArray = ["controller-1", "controller-2", "controller-3"];
 //   return pixels;
 // });
 
-const wrappingDiv = document.getElementById("wrapping-div");
-let currentItem = 0;
+// function correctPositioning() {
+//   if (myPosition < 0) {
+//     myPosition = pictureArray.length - 1;
+//   } else if (myPosition > pictureArray.length - 1) {
+//     myPosition = 0;
+//   }
+// }
+
+// function runAnimation() {
+//   correctPositioning();
+//   animateToNextPicture();
+// }
+
+// function animateToNextPicture() {
+//   let newPosition = movementArray[myPosition];
+//   wrappingDiv.style.transition = "left 1s ease";
+//   wrappingDiv.style.left = newPosition;
+// }
 
 // function moveLeft() {
-//     const direction = this;
-//     direction.style.transition = "left 1.5s ease";
-//     direction.style.left = pictureArray[currentItem];
-//     currentItem += 1;
+//   myPosition -= 1;
+//   runAnimation();
 // }
-// temp1.addEventListener("transitionend", cycleThroughImages, true);
-// temp1.style.transition = "left 1.2s ease";
-// temp1.style.left = "1px";
+// function moveRight() {
+//   myPosition += 1;
+//   runAnimation();
+// }
 
-function createEventListeners() {
-  const leftArrow = document.getElementById("left-arrow");
-  const rightArrow = document.getElementById("right-arrow");
-  leftArrow.addEventListener("click", moveLeft, true);
-  rightArrow.addEventListener("click", moveRight, true);
-}
+// function cycleContinuously() {
+//   setInterval(moveRight, 5000);
+// }
 
-createEventListeners();
+// function createEventListeners() {
+//   const leftArrow = document.getElementById("left-arrow");
+//   const rightArrow = document.getElementById("right-arrow");
+//   leftArrow.addEventListener("click", moveLeft, true);
+//   rightArrow.addEventListener("click", moveRight, true);
+// }
+
+// createEventListeners();
+// createNavigationCircles();
+// cycleContinuously();
