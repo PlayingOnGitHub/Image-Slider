@@ -1,5 +1,5 @@
 body {
-    background-color: #97CAEF;
+    background-color: #3AAFA9;
     height: 100vh;
     width: 100%;
     margin: 0;
@@ -21,10 +21,6 @@ body {
     overflow: hidden;
     /* could potentially be resized to fit images using javascript.. and 
     maybe resized dynamically while moving with css? */
-}
-
-.pictureFrameWrapper {
-
 }
 
 .arrow {
@@ -49,7 +45,7 @@ body {
 .arrow-line-1 {
     width: 3px;
     height: 20px;
-    background-color: #FC4445;
+    background-color: #2B7A78;
     transform: translate(-50%, -50%) rotate(45deg);
     margin-top: 10px;
     margin-left: 12px;
@@ -58,7 +54,7 @@ body {
 .arrow-line-2 {
     width: 3px;
     height: 20px;
-    background-color: #FC4445;
+    background-color: #2B7A78;
     transform: translate(-50%, -50%) rotate(125deg);
     margin-top: -8px;
     margin-left: 13px;
@@ -92,14 +88,14 @@ body {
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    border: 1px solid #2B7A78;
+    border: 1px solid #17252A;
     margin-right: 4px;
     margin-top: 4px;
     cursor: pointer;
 }
 
 .fill-circle {
-    background-color: #2B7A78;
+    background-color: #17252A;
 }
 
 .unfill-circle {
