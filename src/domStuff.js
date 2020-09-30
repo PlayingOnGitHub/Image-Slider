@@ -52,29 +52,46 @@ function createSlider(id, sliderName, imageArray) {
       `${sliderName}-picture-navigation-wrapper`
     )
   );
+  const myImages = imageArray.forEach((userImage, currentIndex) => {
+    const newImage = wrappingDiv.appendChild(
+      create.element(
+        "img",
+        "class",
+        "picture",
+        "",
+        "id",
+        `${sliderName}-${currentIndex}`
+      )
+    );
+    newImage.src = imageArray[currentIndex];
+  });
+  let currentIndex = 0;
+  let navigationCircles = imageArray.map(() => {
+    const navCircle = pictureNavigationWrapper.appendChild(
+      create.element(
+        "div",
+        "class",
+        "circle",
+        "",
+        "id",
+        `${sliderName}-circle-${currentIndex}`
+      )
+    );
+    if (currentIndex == 0) {
+      navCircle.style.backgroundColor = "#17252A";
+    }
+    currentIndex += 1;
+    return navCircle;
+  });
   let proto = {
     wrappingDiv,
     pictureNavigationWrapper,
     imageArray,
+    sliderName,
+    myImages,
+    navigationCircles,
   };
-  addContent(proto);
-}
-
-function createImages(wrappingDiv, imageArray) {
-  console.log(wrappingDiv);
-  console.log(imageArray);
-}
-
-function createPictureNavigationCircles(pictureNavigationWrapper) {
-  console.log(pictureNavigationWrapper);
-}
-
-function addContent(someData) {
-  const wrappingDiv = someData.wrappingDiv;
-  const pictureNavigationWrapper = someData.pictureNavigationWrapper;
-  const imageArray = someData.imageArray;
-  createImages(wrappingDiv, imageArray);
-  createPictureNavigationCircles(pictureNavigationWrapper);
+  return proto;
 }
 
 export { createSlider };
