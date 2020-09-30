@@ -20,6 +20,7 @@ function animateToNextPicture() {
     `${this.sliderName}-circle-${this.myPosition}`
   );
   this.navigationCircles.forEach((navigationCircle) => {
+    /* More dom stuff but that's okay. Let's get to the next project */
     let circle = document.getElementById(navigationCircle.id);
     circle.style.backgroundColor = "transparent";
   });
